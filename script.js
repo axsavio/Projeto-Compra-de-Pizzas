@@ -4,7 +4,7 @@ const cs = (el)=>document.querySelectorAll(el);
 pizzaJson.map((item, index)=>{         // Pegar o Arquivo de pizzas.js {Item é cada pizza, e index é a posição}.
     let pizzaItem = c('.models .pizza-item').cloneNode(true);  // Preecher informações em pizzaItem.
 
-//EXIBINDO INFORMAÇÔES NA TELA PRINCIPAL
+//EXIBINDO INFORMAÇÔES NA TELA PRINCIPAl uhgurtuurur
     pizzaItem.setAttribute('data-key',index);    //Atibuir a chave da pizza especifica (1/2)
     pizzaItem.querySelector('.pizza-item--img img').src = item.img; // Adicionado imagem das Pizzas na tela.
     pizzaItem.querySelector('.pizza-item--price').innerHTML = `R$ ${item.price.toFixed(2)}`; // Adicionado Preço da pizza na tela  {Template String [`R$ ${}`]} {Para colocar casas decimais [toFixed(2)]}.
