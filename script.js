@@ -103,8 +103,21 @@ c('.pizzaInfo--addButton').addEventListener('click',()=>{ // Adicionar ao carrin
      closeModal(); // Fechar o modal quando tiver com a pizza escolhida
 });
 
+c('.menu-openner').addEventListener('click', ()=>{ //Para aparecer o carrinho no modo mobile
+   if(cart.length > 0){  //Para abrir se somente tiver produtos no carrinho
+     c('aside').style.left = '0';
+   }
+   
+});
+c('.menu-closer').addEventListener('click', ()=>{
+    c('aside').style.left = '100vw';  // Fechar o carrinho quando clicar no botão fechar
+})
+
+
 //CARRINHO
 function updateCart() {  //Funçao para atulizar o carrinho
+    c('.menu-openner span').innerHTML = cart.length; //Permitir mostrar quantidades no carrinho no modo mobile
+
     if (cart.length > 0) { // caso tenha ites no carrinho mostre
         c('aside').classList.add('show');
         c('.cart').innerHTML = ''; //Para zerar o item
@@ -167,6 +180,8 @@ function updateCart() {  //Funçao para atulizar o carrinho
         c('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}` ; 
 
     } else {
-        c('aside').classList.remove('show');
+        c('aside').classList.remove('show'); //Fechar carrinho
+        c('aside').style.left ='100vw'; //Fechar carrinho no mobile
     }
 } 
+//Projeto finalizado!!
